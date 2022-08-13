@@ -1,4 +1,6 @@
-#paper-street-soap
+# PaperStreetSoap
+
+![PaperStreetSoap banner image](https://paperstreetsoap.azureedge.net/site/paper-street-soap-banner.webp)
 
 https://paperstreetsoap.azurewebsites.net/
 
@@ -26,3 +28,4 @@ Tech Stack inludes:
 * Rollbar Error Handling
 * jQuery
 * Bootstrap 5
+
