@@ -1,0 +1,52 @@
+﻿@model PaperStreetSoap.Core.Models.PageContent
+
+@{
+    ViewData["Title"] = "Admin | Pages | Disclaimer";
+    Layout = "/Views/Admin/Shared/_Layout.cshtml";
+    await Html.RenderPartialAsync("/Views/Admin/Pages/Shared/_UpdatePageContentPartial.cshtml", Model);
+}
+
+
+@section Styles {
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <script type="text/javascript">$(document).ready(function () {
+            $('.textarea-editor').summernote({
+                popover: {
+                    image: [],
+                    link: [],
+                    air: []
+                },
+                height: 700, // set editor height
+                minHeight: null, // set minimum height of editor
+                maxHeight: null, // set maximum height of editor
+                focus: true,
+                colors: [
+                    ['#000000', '#ED85C7', '#fff'] //second line of colors
+                ],
+                toolbar: [
+                    ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['insert', ['link', 'picture', 'hr', 'codeview']]
+                ],
+                styleTags: ['p', 'h2', 'h3', 'h4', 'h5']
+            });
+
+            $('.textarea-editor').on('summernote.paste', function (e, ne) {
+                //get the text
+                let inputText = ((ne.originalEvent || ne).clipboardData || window.clipboardData).getData('Text');
+                // block default behavior
+                ne.preventDefault();
+                //modify paste text as plain text
+                let modifiedText = inputText.replace(/\r?\n/g, '<br>');
+                //put it back in editor
+                document.execCommand('insertHtml', false, modifiedText);
+            })
+        });</script>
+}

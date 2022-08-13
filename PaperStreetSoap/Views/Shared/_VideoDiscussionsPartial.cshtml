@@ -1,0 +1,17 @@
+﻿@model List<PaperStreetSoap.Core.Models.VideoDiscussion>
+
+<div class="video-discussions">
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var discussion in Model)
+        {
+            <hr />
+            await Html.RenderPartialAsync("_VideoDiscussionPartial.cshtml", discussion);
+
+            @*if (discussion != Model.Last())
+            {
+
+            }*@
+        }
+    }
+</div>

@@ -1,0 +1,56 @@
+﻿@model PaperStreetSoap.Views.Admin.Partials.EditPackageFormModel
+<!-- Edit Package Modal -->
+<div class="modal fade" id="@($"editPackage{Model.Id}Modal")" tabindex="-1" role="dialog" aria-labelledby="@($"editPackage{Model.Id}ModalLabel")" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="@($"editPackage{Model.Id}ModalLabel")">Update @Model.Title Package</h5>
+                <button type="button" class="btn-primary btn" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            @using (Html.BeginForm("UpdatePackage", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(m => m.Id)
+
+                    <div class="form-floating mb-2">
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @aria_required = "true" })
+                        @Html.LabelFor(m => m.Title)
+                        @Html.ValidationMessageFor(m => m.Title)
+                    </div>
+                    <div class="form-floating mb-2">
+                        @Html.TextBoxFor(m => m.Price, "{0:G29}", new { @class = "form-control", @aria_required = "true", @type = "number" })
+                        @Html.LabelFor(m => m.Price)
+                        @Html.ValidationMessageFor(m => m.Price)
+                    </div>
+                    <div class="form-floating mb-2">
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @aria_required = "true" })
+                        @Html.LabelFor(m => m.Description)
+                    </div>
+                    <div class="row g-4 m-0">
+                        <div class="col form-floating p-0 m-0">
+                            @Html.TextBoxFor(m => m.Duration, new { @class = "form-control", @aria_required = "true", @type = "number" })
+                            @Html.LabelFor(m => m.Duration)
+                        </div>
+                        <div class="col form-floating p-0 m-0">
+                            @Html.DropDownListFor(m => m.DurationType, new List<SelectListItem>()
+                                {
+                                    new SelectListItem("Month", "Month"),
+                                    new SelectListItem("Year", "Year")
+                                }, "Select", new { @class = "form-control", @aria_required = "true" })
+
+                            @Html.LabelFor(m => m.DurationType)
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Edit Package Modal end -->

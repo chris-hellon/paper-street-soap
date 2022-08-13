@@ -1,0 +1,29 @@
+﻿@model IEnumerable<PaperStreetSoap.Core.Models.Chart>
+
+@if (Model.Any())
+{
+    <!-- Charts Start -->
+    <div class="container-xxl py-5 charts">
+        <div class="container p-0">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title text-center text-primary px-3 py-2">Charts</h6>
+                <h2 class="mb-5">Latest Charts</h2>
+            </div>
+            <div class="row g-3">
+                @{
+                    double wowDelay = 0.1;
+
+                    foreach (var chartModel in Model)
+                    {
+                        chartModel.WowDelay = wowDelay;
+
+                        await Html.RenderPartialAsync("/Views/Shared/_ChartPartial.cshtml", chartModel);
+
+                        wowDelay += 0.2;
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Charts End -->
+}

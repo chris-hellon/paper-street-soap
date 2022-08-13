@@ -1,0 +1,25 @@
+﻿@model PaperStreetSoap.Core.Models.PageContent
+
+<div class="container px-0">
+    @using (Html.BeginForm("UpdatePageContent", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        <div class="row g-3 mb-3">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary float-end">
+                    Update
+                </button>
+            </div>
+        </div>
+        <div class="row g-3 mb-3">
+            <div class="col-md-12">
+                @if (Model != null)
+                {
+                    @Html.HiddenFor(m => m.Id)
+                    @Html.HiddenFor(m => m.Header)
+                    @Html.TextAreaFor(m => m.Content, new { @class = "form-control textarea-editor", @aria_required = "true" });
+                    @*@Html.ValidationMessageFor(m => m.Details);*@
+                }
+            </div>
+        </div>
+    }
+</div>

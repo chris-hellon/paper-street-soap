@@ -1,0 +1,40 @@
+﻿@model PaperStreetSoap.ViewModels.MembersViewModel
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    var httpContext = HttpContextAccessor.HttpContext;
+
+    if (httpContext != null)
+    {
+        var currentPath = httpContext.Request.Path.Value != null ? httpContext.Request.Path.Value : "/";
+
+        <!-- Navigation Start -->
+        <div class="sidebar-navigation wow fadeInLeft" data-wow-delay="0.1s">
+            <ul class="nav nav-pills flex-column">
+                @if (Model.Subscription != null)
+                {
+                    <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/members/latest-review" ? "active" : "" )" asp-area="" asp-controller="Members" asp-action="LatestReview">Latest Review</a></li>
+                    <li class="nav-item"><a class="nav-link @(currentPath.Contains("/members/market-reviews") ? "active" : "" )" asp-area="" asp-controller="Members" asp-action="Category" asp-route-category="market-reviews">Market Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link @(currentPath.Contains("/members/education") ? "active" : "" )" asp-area="" asp-controller="Members" asp-action="Category" asp-route-category="education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link @(currentPath.Contains("/members/resources") ? "active" : "" )" asp-area="" asp-controller="Members" asp-action="Category" asp-route-category="resources">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/members/live-trading" ? "active" : "" )" asp-area="" asp-controller="Members" asp-action="Category" asp-route-category="live-trading">Live Trading</a></li>
+                }
+
+                <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index">My Account</a></li>
+            </ul>
+            <hr />
+            <ul class="nav nav-pills flex-column">
+                @if (Model.Subscription != null)
+                {
+                    <li class="nav-item"><a class="nav-link active mb-2 bg-dark" href="#" target="_blank">Community</a></li>
+                }
+
+                <li class="nav-item"><a class="nav-link active mb-2 bg-dark" href="https://ftx.com" target="_blank">Trade Crypto</a></li>
+                <li class="nav-item"><a class="nav-link active mb-2 bg-dark" href="https://cryptoquant.com/asset/btc/summary" target="_blank">Bitcoin Data</a></li>
+            </ul>
+        </div>
+        <!-- Navigation Start -->
+    }
+}
+
+

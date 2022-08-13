@@ -1,0 +1,135 @@
+﻿@model PaperStreetSoap.Views.Admin.Pages.Home.IndexModel
+@{
+    ViewData["Title"] = "Admin | Pages | Home Page";
+    Layout = "/Views/Admin/Shared/_Layout.cshtml";
+}
+
+<div class="container px-0">
+    @using (Html.BeginForm("UpdateHomePage", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        <div class="row g-3 mb-3">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary float-end">
+                    Update
+                </button>
+            </div>
+
+        </div>
+        <div class="row g-3 mb-3">
+            @if (Model.PageSections.Any())
+            {
+                int sectionIndex = 0;
+
+                foreach (var pageSection in Model.PageSections)
+                {
+                    <div class="col-md-12 mb-2">
+                        <h5>@pageSection.SectionName</h5>
+                        @Html.HiddenFor(m => m.PageSections[sectionIndex].Id)
+                        @Html.HiddenFor(m => m.PageSections[sectionIndex].PageId)
+
+                        <div class="container px-0">
+                            <div class="row g-3">
+                                @if (pageSection.Contents.Any())
+                                {
+                                    int contentIndex = 0;
+                                    foreach (var sectionContent in pageSection.Contents)
+                                    {
+                                        @Html.HiddenFor(m => m.PageSections[sectionIndex].Contents[contentIndex].Id)
+                                        @Html.HiddenFor(m => m.PageSections[sectionIndex].Contents[contentIndex].PageSectionId)
+
+                                        if (pageSection.Contents.Count() == 3)
+                                        {
+                                            <div class="col-lg-4">
+                                                <div class="form-floating mb-2">
+                                                    @Html.TextBoxFor(m => m.PageSections[sectionIndex].Contents[contentIndex].Header, new { @class = "form-control", @aria_required = "true" })
+                                                    @Html.LabelFor(m => m.PageSections[sectionIndex].Contents[contentIndex].Header)
+                                                </div>
+                                                <div class="form-floating mb-2">
+                                                    @Html.TextAreaFor(m => m.PageSections[sectionIndex].Contents[contentIndex].Content, new { @class = "form-control textarea-editor", @aria_required = "true" })
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            if (pageSection.SectionName != "Welcome Video")
+                                            {
+                                                <div class="col-lg-12">
+                                                    <div class="form-floating mb-2">
+                                                        @Html.TextAreaFor(m => m.PageSections[sectionIndex].Contents[contentIndex].Content, new { @class = "form-control textarea-editor", @aria_required = "true" })
+                                                    </div>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-lg-12">
+                                                    <div class="form-floating mb-2">
+                                                        @Html.TextBoxFor(m => m.PageSections[sectionIndex].Contents[contentIndex].Content, new { @class = "form-control", @aria_required = "true" })
+                                                        @Html.LabelFor(m => m.PageSections[sectionIndex].Contents[contentIndex].Content)
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+
+                                        contentIndex++;
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    sectionIndex++;
+                }
+            }
+        </div>
+    }
+</div>
+
+@section Styles {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesStyles.cshtml");
+    }
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesScripts.cshtml");
+    }
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <script type="text/javascript">$(document).ready(function () {
+            $('.textarea-editor').summernote({
+                popover: {
+                    image: [],
+                    link: [],
+                    air: []
+                },
+                height: 200, // set editor height
+                minHeight: null, // set minimum height of editor
+                maxHeight: null, // set maximum height of editor
+                focus: true,
+                colors: [
+                    ['#000000', '#ED85C7', '#fff'] //second line of colors
+                ],
+                toolbar: [
+                    ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['insert', ['link', 'picture', 'hr', 'codeview']]
+                ],
+                styleTags: ['p', 'h2', 'h3', 'h4', 'h5']
+            });
+
+            $('.textarea-editor').on('summernote.paste', function (e, ne) {
+                //get the text
+                let inputText = ((ne.originalEvent || ne).clipboardData || window.clipboardData).getData('Text');
+                // block default behavior
+                ne.preventDefault();
+                //modify paste text as plain text
+                let modifiedText = inputText.replace(/\r?\n/g, '<br>');
+                //put it back in editor
+                document.execCommand('insertHtml', false, modifiedText);
+            })
+        });</script>
+}

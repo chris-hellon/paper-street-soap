@@ -1,0 +1,90 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+<!--    <Nullable>enable</Nullable>-->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-PaperStreetSoap-D32F4B5B-4F13-4D9C-B396-6F623E6DEB34</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.8" />
+    <PackageReference Include="Humanizer" Version="2.14.1" />
+    <PackageReference Include="AspNetCore.SEOHelper" Version="1.0.1" />
+    <PackageReference Include="Rollbar" Version="5.2.0" />
+    <PackageReference Include="Rollbar.NetCore.AspNet" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PaperStreetSoap.Core\PaperStreetSoap.Core.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\PaperStreetSoap.Infrastructure\PaperStreetSoap.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ProjectBase\ProjectBase\ProjectBase.Core.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ProjectBase\ProjectBase.Infrastructure\ProjectBase.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+    <None Remove="Views\Admin\Orders\" />
+    <None Remove="Views\Admin\LiveTrading\" />
+    <None Remove="Views\Admin\Pages\" />
+    <None Remove="Views\Admin\Pages\Home\" />
+    <None Remove="Views\Admin\Pages\TermsAndConditions\" />
+    <None Remove="Views\Admin\Pages\Disclaimer\" />
+    <None Remove="Views\Admin\Pages\About\" />
+    <None Remove="Views\Admin\Pages\Shared\" />
+    <None Remove="Views\Orders\Processing\" />
+    <None Remove="Views\Orders\Fail\" />
+    <None Remove="Humanizer" />
+    <None Remove="AspNetCore.SEOHelper" />
+    <None Remove="Views\EmailTemplates\" />
+    <None Remove="Rollbar" />
+    <None Remove="Rollbar.NetCore.AspNet" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Admin\Orders\" />
+    <Folder Include="Views\Admin\LiveTrading\" />
+    <Folder Include="Views\Admin\Pages\" />
+    <Folder Include="Views\Admin\Pages\Home\" />
+    <Folder Include="Views\Admin\Pages\TermsAndConditions\" />
+    <Folder Include="Views\Admin\Pages\Disclaimer\" />
+    <Folder Include="Views\Admin\Pages\About\" />
+    <Folder Include="Views\Admin\Pages\Shared\" />
+    <Folder Include="Views\Orders\Processing\" />
+    <Folder Include="Views\Orders\Fail\" />
+    <Folder Include="Views\EmailTemplates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Properties\ServiceDependencies\paperstreetsoap - Zip Deploy\profile.arm.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Properties\ServiceDependencies\paperstreetsoap - Web Deploy\profile.arm.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Views\EmailTemplates\NewVideoTemplate.html">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>

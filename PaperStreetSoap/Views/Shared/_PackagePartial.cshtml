@@ -1,0 +1,32 @@
+﻿@model PaperStreetSoap.Core.Models.Package
+
+<div class="@Model.CssClass @(!Model.Admin ? "wow" : "") fadeInUp" data-wow-delay="@(Model.WowDelay)s">
+    <div class="course-item bg-light">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="https://paperstreetsoap.azureedge.net/site/packageheader.webp" alt="Select package header">
+            @if (!Model.Admin)
+            {
+                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                    <a class="flex-shrink-0 btn btn-sm btn-primary px-3" asp-controller="Orders" asp-action="CreateOpenNodeCharge" asp-route-packageId="@Model.Id" style="border-radius: 30px;">Select</a>
+                </div>
+            }
+        </div>
+        <div class="text-center p-4">
+            <h3 class="mb-0">@Math.Round(Model.Price)$</h3>
+            <h5 class="mb-4">@Model.Title</h5>
+            <p>@Model.Description</p>
+
+            @if (Model.Admin)
+            {
+                <div class="text-center py-2 px-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"deletePackage{Model.Id}Modal")">
+                        Delete
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"editPackage{Model.Id}Modal")">
+                        Edit
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

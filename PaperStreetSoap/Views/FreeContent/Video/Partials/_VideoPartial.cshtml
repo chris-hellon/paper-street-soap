@@ -1,0 +1,20 @@
+﻿@model PaperStreetSoap.Core.Models.Video
+<!-- Video Container -->
+<div class="container-xxl py-5">
+    <div class="container p-0">
+        <div class="row g-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-12">
+                <h4>@Model.Title</h4>
+                <h5>@Model.Date.ToLongDateString()</h5>
+                <hr />
+                @Html.Raw(Model.Details)
+            </div>
+            <div class="col-lg-8 col-md-12">
+                @{
+                    await Html.RenderPartialAsync("/Views/Shared/_VideoPartial.cshtml", Model);
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Container -->

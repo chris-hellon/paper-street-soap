@@ -1,0 +1,162 @@
+﻿@model PaperStreetSoap.Views.Admin.Users.IndexModel
+@using System.Security.Claims;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Admin | Users";
+    Layout = "/Views/Admin/Shared/_Layout.cshtml";
+}
+
+<!-- Users Container -->
+<div class="container px-0">
+    <div class="row g-3 mb-3">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                Add User
+            </button>
+        </div>
+    </div>
+    <div class="row g-3">
+        @if (Model.Users != null && Model.Users.Any())
+        {
+            var httpContext = HttpContextAccessor.HttpContext;
+
+            if (httpContext != null)
+            {
+                var currentPath = httpContext.Request.Path.Value != null ? httpContext.Request.Path.Value : "/";
+
+                var currentUser = httpContext.User != null && httpContext.User.Identity != null ? httpContext.User : null;
+                var userIsSignedIn = currentUser != null && currentUser.Identity != null && currentUser.Identity.IsAuthenticated;
+
+                var userIsSuperAdmin = userIsSignedIn && currentUser != null && currentUser.FindFirst(ClaimTypes.NameIdentifier)?.Value == "4e0da613-fe6c-41fe-92b6-fbd21713b6c3";
+
+                <div class="table-responsive">
+                    <!-- Videos Table Start -->
+                    <table id="users-table" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="th-sm">
+                                    Username
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Join Date
+                                </th>
+                                <th class="th-sm">
+                                    Has Subscription
+                                </th>
+                                <th class="th-sm">
+                                    Is Admin
+                                </th>
+                                @if (userIsSuperAdmin)
+                                {
+                                    <th class="th-sm no-sort">
+
+                                    </th>
+                                }
+                                <th class="th-sm no-sort">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var userModel in Model.Users)
+                                {
+                                    <tr>
+                                        <td>@userModel.UserName</td>
+                                        <td>@userModel.Email</td>
+                                        <td>@userModel.SignUpDate.ToLongDateString()</td>
+                                        <td>@(userModel.HasSubscription ? "Yes" : "No")</td>
+                                        <td>@(userModel.IsAdmin ? "Yes" : "No")</td>
+                                        @if (userIsSuperAdmin)
+                                        {
+                                            <td class="text-center">
+                                                @if (userModel.IsAdmin)
+                                                {
+                                                    <button type="button" class="btn btn-primary" onclick="removeUserFromAdmin('@userModel.Id'); return false;">
+                                                        Remove From Admin
+                                                    </button>
+                                                }
+                                                else
+                                                {
+                                                    <button type="button" class="btn btn-primary" onclick="addUserToAdmin('@userModel.Id'); return false;">
+                                                        Add To Admin
+                                                    </button>
+                                                }
+                                            </td>
+                                        }
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"deleteUser{userModel.Id}Modal")">
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    await Html.RenderPartialAsync("/Views/Admin/Partials/_DeleteRecordFormPartial.cshtml", new PaperStreetSoap.Views.Admin.Partials.DeleteRecordFormModel("User", "DeleteUser", null, userModel.Id));
+                                }
+                            }
+                        </tbody>
+                    </table>
+                    <!-- Videos Table End -->
+                </div>
+            }
+        }
+    </div>
+</div>
+<!-- End Users Container -->
+<!-- Add User Modal -->
+<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUserModalLabel">Add User</h5>
+                <button type="button" class="btn-primary btn" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            @{
+                await Html.RenderPartialAsync("/Views/Admin/Partials/_AddUserFormPartial.cshtml", Model.User);
+            }
+        </div>
+    </div>
+</div>
+<!-- End Add User Modal -->
+
+@section Styles {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesStyles.cshtml");
+    }
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesScripts.cshtml");
+    }
+
+    <script type="text/javascript">$('#users-table').DataTable({
+            order: [[0, 'asc']],
+            columnDefs: [
+                { targets: 'no-sort', orderable: false },
+                { type: "date", targets: 2 }
+            ],
+            responsive: true
+        });
+        $('.dataTables_length').addClass('bs-select');
+
+        var addUserToAdmin = function (id) {
+            showLoader();
+            postAjax("/Admin/AddUserToAdmin", { "id": id }, function (result) {
+
+            });
+        }
+
+        var removeUserFromAdmin = function (id) {
+            showLoader();
+            postAjax("/Admin/RemoveUserFromAdmin", { "id": id }, function (result) {
+
+            });
+        }</script>
+}

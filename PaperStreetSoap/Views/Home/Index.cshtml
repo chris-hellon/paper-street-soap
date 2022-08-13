@@ -1,0 +1,123 @@
+﻿@model PaperStreetSoap.Views.Home.IndexModel
+
+@section Styles {
+    <style type="text/css">
+        .navbar {
+            top: -100px;
+        }
+    </style>
+}
+
+<!-- Banner Start -->
+<div class="container-fluid p-0 w-100 index-banner index-banner-desktop">
+    <div class="position-relative w-100">
+        <img src="https://paperstreetsoap.azureedge.net/site/youtube banner.webp" class="w-100 index-banner-bw-image" alt="Pixelated banner image" />
+
+        <div class="index-banner-gradient position-absolute top-0 start-0 w-100 h-100 p-0 m-0"></div>
+
+        <div class="index-banner-content w-100 h-100 p-0 position-absolute top-0 start-0 ms-5">
+            <img src="https://paperstreetsoap.azureedge.net/site/logo.webp" class="img-fluid h-40 fadeInLeft wow" data-wow-delay="0.1s" alt="Paper street soap logo" />
+            <h2 class="index-banner-label text-white mt-0 ms-3 fadeInLeft wow" data-wow-delay="0.7s">Welcome to Fight Club...</h2>
+            <h1 class="d-none">PaperStreetSoap | Trading - Resources - Research</h1>
+        </div>
+    </div>
+</div>
+<!-- Banner End -->
+<!-- Banner Start -->
+<div class="container-fluid p-0 mb-0 w-100 index-banner index-banner-mobile">
+    <img src="https://paperstreetsoap.azureedge.net/site/logo.webp" class="img-fluid wow fadeInUp" data-wow-delay="0.1s" alt="Paper street soap logo" />
+    <h2 class="index-banner-label text-black animated slideInDown mt-5">Welcome to Fight Club</h2>
+</div>
+
+@{
+    await Task.WhenAll(new List<Task>()
+    {
+        Html.RenderPartialAsync("~/Views/Home/Partials/_ShortIntroductionPartial.cshtml", Model.ShortIntroduction),
+        Html.RenderPartialAsync("~/Views/Home/Partials/_AboutPartial.cshtml", Model.About),
+        Html.RenderPartialAsync("~/Views/Home/Partials/_ChartsPartial.cshtml", Model.Charts),
+        Html.RenderPartialAsync("~/Views/Home/Partials/_WelcomeVideosPartial.cshtml", Model.WelcomeVideo)
+    });
+}
+
+<!-- Team Start -->
+<div class="container-xxl py-5">
+    <div class="container p-0">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-primary px-3 py-2">Paper Street Soap</h6>
+            <h2 class="mb-5">About Me</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item text-center bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="https://paperstreetsoap.azureedge.net/site/tyler.webp" alt="Tyler Durden portrait">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" target="_blank" href="https://twitter.com/ApeDurden"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" target="_blank" href="https://www.youtube.com/ApeDurden"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" target="_blank" href="https://tylerdurden.substack.com/?utm_source=substack&utm_medium=web&utm_campaign=reader2?utm_source=%2Fsearch%2Ftyler%2520durden&utm_medium=reader2"><img src="https://paperstreetsoap.azureedge.net/site/substack-white.webp" alt="Substack logo" id="substack-logo" /></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Tyler Durden</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+@section Scripts {
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            let windowWidth = $(window).width();
+            let windowHeight = $(window).height();
+            let bannerHeight = $('.index-banner img').height();
+            let navbarHeight = 70;
+            let newNavBarHeight = 70;
+
+            if (windowWidth > 992) {
+                newNavBarHeight = (windowHeight - bannerHeight) / 2;
+
+                $('.navbar').css('height', newNavBarHeight + 'px');
+                $('.index-banner').css('margin-bottom', newNavBarHeight + 'px');
+            }
+
+            $(window).on('scroll', function () {
+                windowWidth = $(window).width();
+
+                if (windowWidth > 992) {
+                    if ($(this).scrollTop() > 100) {
+                        $('.navbar').css('height', navbarHeight + 'px');
+                        $('.index-banner').css('margin-bottom', navbarHeight + 'px');
+                    } else {
+                        $('.navbar').css('height', newNavBarHeight + 'px');
+                        $('.index-banner').css('margin-bottom', newNavBarHeight + 'px');
+                    }
+                }
+            });
+
+            $(window).on('resize', function () {
+                windowWidth = $(window).width();
+
+                if (windowWidth < 992) {
+                    $('.navbar').css('height', 'auto');
+                }
+                else {
+                    bannerHeight = $('.index-banner img').height();
+                    newNavBarHeight = (windowHeight - bannerHeight) / 2;
+
+                    if ($(this).scrollTop() > 100) {
+                        $('.navbar').css('height', navbarHeight + 'px');
+                        $('.index-banner').css('margin-bottom', '20px');
+                    } else {
+                        $('.navbar').css('height', newNavBarHeight + 'px');
+                        $('.index-banner').css('margin-bottom', newNavBarHeight + 'px');
+                    }
+                }
+            });
+        });
+    </script>
+} 

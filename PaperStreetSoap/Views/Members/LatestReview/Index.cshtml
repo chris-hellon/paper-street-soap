@@ -1,0 +1,7 @@
+﻿@model PaperStreetSoap.Views.Members.LatestReview.IndexModel
+
+@{
+    ViewData["Title"] = "Latest Review";
+    Layout = "/Views/Members/Shared/_Layout.cshtml";
+    await Html.RenderPartialAsync("/Views/Members/Shared/_SingleVideoPartial.cshtml", Model.Video);
+}

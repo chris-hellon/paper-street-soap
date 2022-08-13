@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+<!--    <Nullable>enable</Nullable>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Dapper" />
+    <None Remove="Microsoft.Data.Sqlite" />
+    <None Remove="Microsoft.AspNetCore.Authorization" />
+    <None Remove="Microsoft.AspNetCore.Authorization.Policy" />
+    <None Remove="UoN.ExpressiveAnnotations.NetCore" />
+    <None Remove="Azure.Storage.Blobs" />
+    <None Remove="Microsoft.AspNetCore.Identity" />
+    <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Microsoft.AspNetCore.Hosting" />
+    <None Remove="RazorLight" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="DTOs\" />
+    <None Remove="Interfaces\Clients\" />
+    <None Remove="Interfaces\Repositories\" />
+    <None Remove="DTOs\Requests\" />
+    <None Remove="DTOs\Responses\" />
+    <None Remove="RestSharp" />
+    <None Remove="Interfaces\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Interfaces\Clients\" />
+    <Folder Include="Interfaces\Repositories\" />
+    <Folder Include="DTOs\Requests\" />
+    <Folder Include="DTOs\Responses\" />
+    <Folder Include="Interfaces\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization.Policy" Version="2.2.0" />
+    <PackageReference Include="UoN.ExpressiveAnnotations.NetCore" Version="1.0.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="RazorLight" Version="2.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="RestSharp" Version="108.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProjectBase\ProjectBase\ProjectBase.Core.csproj" />
+  </ItemGroup>
+</Project>

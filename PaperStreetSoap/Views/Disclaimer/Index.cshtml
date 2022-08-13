@@ -1,0 +1,24 @@
+﻿@model PaperStreetSoap.Core.Models.PageContent
+@{
+    ViewData["Title"] = "Disclaimer";
+    await Html.RenderPartialAsync("~/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel());
+}
+
+<div class="container-xxl py-5">
+    <div class="container p-0">
+        <div class="row g-4 wow fadeInUp" data-wow-delay="0.1s">
+            @if (Model != null)
+            {
+                @Html.Raw(Model.Content);
+            }
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style type="text/css">
+        p {
+            margin: 0px;
+        }
+    </style>
+}

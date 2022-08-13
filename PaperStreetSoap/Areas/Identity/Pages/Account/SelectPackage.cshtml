@@ -1,0 +1,8 @@
+﻿@page "/select-package/{id?}"
+@model PaperStreetSoap.Areas.Identity.Pages.Account.SelectPackageModel
+
+@{
+    ViewData["Title"] = "Select Package";
+    await Html.RenderPartialAsync("~/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel(false));
+    await Html.RenderPartialAsync("~/Views/Shared/_PackagesPartial.cshtml", Model.Packages);
+}

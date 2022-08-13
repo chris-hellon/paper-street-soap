@@ -1,0 +1,6 @@
+﻿@model PaperStreetSoap.Views.Members.Video.IndexModel
+
+@{
+    Layout = "/Views/Members/Shared/_Layout.cshtml";
+    await Html.RenderPartialAsync("/Views/Members/Shared/_SingleVideoPartial.cshtml", Model.Video);
+}

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PaperStreetSoap.Core.Models.PageContent>
+
+
+@if (Model.Any())
+{
+    var contentNotAllowed = new string[]
+    {
+            "<p style=\"text-align: center; \"><br></p>",
+            "<p><br></p>",
+            "<p style=\"text-align: left; \"><br></p>",
+            "<p style=\"text-align: right; \"><br></p>"
+                            };
+
+    var availableContent = Model.Where(w => w.Header != null && w.Header.Length > 0 && !contentNotAllowed.Contains(w.Content)).ToList();
+
+    if (availableContent.Any())
+    {
+        var cssClass = "col-lg-4";
+
+        if (availableContent.Count == 2)
+            cssClass = "col-lg-6";
+        else if (availableContent.Count == 1)
+            cssClass = "col-lg-12";
+
+        <!-- Introduction Start -->
+        <div class="container-xxl py-5 about-section">
+            <div class="container p-0">
+                <div class="row g-4">
+                    @{
+                        double wowDelay = 0.1;
+
+                        foreach (var aboutModel in availableContent)
+                        {
+                            <div class="@cssClass col-sm-12 fadeInUp wow" data-wow-delay="@(wowDelay)s">
+                                <div class="service-item text-center pt-3">
+                                    <div class="p-4">
+                                        <h5 class="mb-3">@aboutModel.Header</h5>
+                                        <p>@aboutModel.Content</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            wowDelay += 0.2;
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Introduction End -->
+    }
+}

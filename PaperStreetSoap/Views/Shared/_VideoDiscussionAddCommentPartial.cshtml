@@ -1,0 +1,30 @@
+﻿@model PaperStreetSoap.Views.Shared.VideoDiscussionAddCommentModel
+
+@using (Html.BeginForm("CreateVideoDiscussion", ViewData["Section"].ToString(), FormMethod.Post, new { @class = "video-discussion-parent-form w-100", @enctype = "multipart/form-data" }))
+{
+    <div class="container px-0">
+        @Html.HiddenFor(m => m.VideoId)
+        @Html.HiddenFor(m => m.ParentId)
+
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <div class="user-profile-image-container">
+                    <img class="rounded-circle shadow-1-strong h-100 w-100 mt-1"
+                         src="@Model.ProfileImageUrl" alt="User Profile image" />
+                </div>
+
+                <div class="d-inline-block ms-2" style="width:calc(100% - 5rem);">
+                    @Html.TextAreaFor(m => m.Comment, new { @class = "autoExpand form-control add-comment-textarea", @rows = "1", @data_min_rows = "1", @placeholder = "Add Comment", @maxlength = "500" })
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-12 text-end">
+                @Html.ValidationMessageFor(m => m.Comment, null, new { @class = "mt-1 mb-1" })
+                <button class="btn btn-primary" type="button" id="video-discussion-parent-button">
+                    Create
+                </button>
+            </div>
+        </div>
+    </div>
+}  

@@ -1,0 +1,26 @@
+﻿@model PaperStreetSoap.Views.Orders.Fail.IndexModel
+
+@{
+    ViewData["Title"] = "Order Failed";
+    await Html.RenderPartialAsync("~/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel());
+}
+
+<div class="px-5 py-5 wow zoomIn identity-container" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <h5>Unfortunately your order has failed.</h5>
+            <p>You can find details of your order below.</p>
+        </div>
+        <div class="row gy-2 gx-4 mt-4 text-center">
+            <div class="col-sm-12">
+                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Order Reference <strong>#@Model.OrderId</strong></p>
+            </div>
+            <div class="col-sm-12">
+                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Current Package <strong>@Model.PackageName</strong></p>
+            </div>
+        </div>
+        <div class="row gy-2 gx-4 mt-4 text-center">
+           <p>If you would like to attempt payment again <a href="@($"https://checkout.opennode.com/{Model.OpenNodeId}")">click here</a></p>
+        </div>
+    </div>
+</div>

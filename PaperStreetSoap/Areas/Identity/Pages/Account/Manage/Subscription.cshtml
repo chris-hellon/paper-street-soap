@@ -1,0 +1,51 @@
+﻿@page "/members/subscription"
+@model PaperStreetSoap.Areas.Identity.Pages.Account.Manage.SubscriptionModel
+
+@{
+    ViewData["Title"] = "Subscription";
+}
+
+<div class="wow zoomIn" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-12">
+                @if (Model.Subscription == null)
+                {
+                    if (Model.UnpaidOrder != null && Model.UnpaidPackage != null)
+                    {
+                        <p>You currently have an outstanding order for our <span class="text-primary">@Model.UnpaidPackage.Title @(Model.UnpaidPackage.Duration + " " + Model.UnpaidPackage.DurationType)</span> package.</p>
+                        <p>If you would like to complete this order, <a href="@($"https://checkout.opennode.com/{Model.UnpaidOrder.OpenNodeId}")">click here</a>.</p>
+                        <p>
+                            Alternatively, to create a new order, <a asp-area="Identity" asp-page="/Account/SelectPackage">
+                                click here
+                            </a>.
+                        </p>
+                    }
+                    else
+                    {
+                        <p>You currently have no active subscriptions.</p>
+                        <p>
+                            To renew your subscription,  <a asp-area="Identity" asp-page="/Account/SelectPackage">
+                                click here
+                            </a>
+                        </p>
+                    }
+                }
+                else
+                {
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-12">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Current Package <strong>@Model.Subscription.PackageName (@(Model.Subscription.Price)$)</strong></p>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Start Date <strong>@Model.Subscription.StartDate.ToLongDateString() @Model.Subscription.StartDate.ToShortTimeString()</strong></p>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Expiry Date <strong>@Model.Subscription.EndDate.ToLongDateString() @Model.Subscription.EndDate.ToShortTimeString()</strong></p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

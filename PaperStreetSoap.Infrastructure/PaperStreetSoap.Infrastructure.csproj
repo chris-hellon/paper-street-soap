@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Repositories\" />
+    <None Remove="Dapper" />
+    <None Remove="Microsoft.Data.Sqlite" />
+    <None Remove="Microsoft.Extensions.Configuration" />
+    <None Remove="Azure.Storage.Blobs" />
+    <None Remove="Microsoft.AspNetCore.Hosting" />
+    <None Remove="RazorLight" />
+    <None Remove="Razor.Templating.Core" />
+    <None Remove="RazorEngine.NetCore" />
+    <None Remove="RazorEngineCore" />
+    <None Remove="ProjectBase.Core" />
+    <None Remove="ProjectBase.Infrastructure" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Clients\" />
+    <None Remove="RestSharp" />
+    <None Remove="Services\" />
+    <None Remove="MailKit" />
+    <None Remove="MimeKit" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Clients\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Projects\ProjectBase\ProjectBase\ProjectBase.Core.csproj" />
+    <ProjectReference Include="..\..\..\Projects\ProjectBase\ProjectBase.Infrastructure\ProjectBase.Infrastructure.csproj" />
+    <ProjectReference Include="..\PaperStreetSoap.Core\PaperStreetSoap.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="RestSharp" Version="108.0.1" />
+    <PackageReference Include="MailKit" Version="3.3.0" />
+    <PackageReference Include="MimeKit" Version="3.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ProjectBase.Core">
+      <HintPath>..\..\ProjectBase\ProjectBase\bin\Debug\net6.0\ProjectBase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectBase.Infrastructure">
+      <HintPath>..\..\ProjectBase\ProjectBase.Infrastructure\bin\Debug\net6.0\ProjectBase.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

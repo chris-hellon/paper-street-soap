@@ -1,0 +1,46 @@
+﻿@page "/sign-up"
+@model RegisterModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="container-xxl py-5 wow zoomIn identity-container" data-wow-delay="0.1s">
+    <div class="container p-0">
+        <div class="row g-4">
+            <h1 class="text-center">@ViewData["Title"]</h1>
+
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating mb-2">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="email" aria-required="true" />
+                    <label asp-for="Input.Email"></label>
+                    <span asp-validation-for="Input.Email"></span>
+                </div>
+                <div class="form-floating mb-2">
+                    <input asp-for="Input.Username" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Username"></label>
+                    <span asp-validation-for="Input.Username"></span>
+                </div>
+                <div class="form-floating mb-2">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Password"></label>
+                    <span asp-validation-for="Input.Password"></span>
+                </div>
+                <div class="form-floating mb-2">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <span asp-validation-for="Input.ConfirmPassword"></span>
+                </div>
+                <div class="form-text">By signing up to PaperStreetSoap, you agree to our <br /><a asp-area="" asp-controller="TermsAndConditions" asp-action="Index">Terms &amp; Conditions</a> and <a asp-area="" asp-controller="Disclaimer" asp-action="Index">Disclaimer</a>.</div>
+                <div class="mb-3 mt-3">
+                    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Sign Up</button>
+                </div>
+                <div>
+                    <p>
+                        <a asp-page="./Login">Already signed up? Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

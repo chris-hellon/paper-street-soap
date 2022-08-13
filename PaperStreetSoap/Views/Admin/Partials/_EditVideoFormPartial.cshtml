@@ -1,0 +1,67 @@
+﻿@model PaperStreetSoap.Views.Admin.Partials.EditVideoFormModel
+<!-- Edit Video Modal -->
+<div class="modal fade" id="@($"editVideo{Model.Id}Modal")" tabindex="-1" role="dialog" aria-labelledby="@($"editVideo{Model.Id}ModalLabel")" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="@($"editVideo{Model.Id}ModalLabel")">Update @Model.Title Video</h5>
+                <button type="button" class="btn-primary btn" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form method="post" enctype="multipart/form-data" asp-page-handler="UpdateVideo">
+                <div class="modal-body">
+                    @Html.HiddenFor(m => m.Id)
+
+                    <div class="form-floating mb-2">
+                        <input asp-for="@Model.VideoUrl" class="form-control" aria-required="true" />
+                        <label asp-for="@Model.VideoUrl"></label>
+                        <span asp-validation-for="@Model.VideoUrl"></span>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input asp-for="@Model.Title" class="form-control" aria-required="true" />
+                        <label asp-for="@Model.Title"></label>
+                        <span asp-validation-for="@Model.Title"></span>
+                    </div>
+                    <label asp-for="@Model.Details"></label>
+                    <div class="form-floating mb-2">
+                        <textarea asp-for="@Model.Details" class="form-control textarea-editor" aria-required="true"></textarea>
+                        <span asp-validation-for="@Model.Details"></span>
+                    </div>
+                    <div class="mb-2 custom-control custom-checkbox">
+                        <input asp-for="@Model.TodaysReview" type="checkbox" class="custom-control-input" aria-required="true" />
+                        <label asp-for="@Model.TodaysReview" class="custom-control-label"></label>
+                    </div>
+                    <div class="mb-2 custom-control custom-checkbox">
+                        <input asp-for="@Model.MarketReview" type="checkbox" class="custom-control-input" aria-required="true" />
+                        <label asp-for="@Model.MarketReview" class="custom-control-label"></label>
+                    </div>
+                    <div class="mb-2 custom-control custom-checkbox">
+                        <input asp-for="@Model.MembersEducation" type="checkbox" class="custom-control-input" aria-required="true" />
+                        <label asp-for="@Model.MembersEducation" class="custom-control-label"></label>
+                    </div>
+                    <div class="mb-2 custom-control custom-checkbox">
+                        <input asp-for="@Model.Resources" type="checkbox" class="custom-control-input" aria-required="true" />
+                        <label asp-for="@Model.Resources" class="custom-control-label"></label>
+                    </div>
+                    <hr />
+                    <p>Free Content</p>
+                    <div class="mb-2 custom-control custom-checkbox">
+                        <input asp-for="@Model.FreeGmBitcoin" type="checkbox" class="custom-control-input" aria-required="true" />
+                        <label asp-for="@Model.FreeGmBitcoin" class="custom-control-label"></label>
+                    </div>
+                    <div class="mb-2 custom-control custom-checkbox">
+                        <input asp-for="@Model.FreeEducation" type="checkbox" class="custom-control-input" aria-required="true" />
+                        <label asp-for="@Model.FreeEducation" class="custom-control-label"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Edit Video Modal end -->

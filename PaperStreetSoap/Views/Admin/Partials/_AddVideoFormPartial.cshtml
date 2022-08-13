@@ -1,0 +1,54 @@
+﻿@model PaperStreetSoap.Views.Admin.Partials.AddVideoFormModel
+
+@using (Html.BeginForm("CreateVideo", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="modal-body">
+        <div class="form-floating mb-2">
+            @Html.TextBoxFor(m => m.VideoUrl, new { @class = "form-control", @aria_required = "true" })
+            @Html.LabelFor(m => m.VideoUrl)
+            @Html.ValidationMessageFor(m => m.VideoUrl)
+        </div>
+        <div class="form-floating mb-2">
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @aria_required = "true" })
+            @Html.LabelFor(m => m.Title)
+            @Html.ValidationMessageFor(m => m.Title)
+        </div>
+        @Html.LabelFor(m => m.Details)
+        <div class="form-floating mb-2">
+            @Html.TextAreaFor(m => m.Details, new { @class = "form-control textarea-editor", @aria_required = "true" })
+            @Html.ValidationMessageFor(m => m.Details)
+        </div>
+        <hr/>
+        <p><strong>Members</strong></p>
+        <div class="mb-2 custom-control custom-checkbox">
+            @Html.CheckBoxFor(m => m.TodaysReview, new { @class = "custom-control-input", @aria_required = "true" })
+            @Html.LabelFor(m => m.TodaysReview)
+        </div>
+        <div class="mb-2 custom-control custom-checkbox">
+            @Html.CheckBoxFor(m => m.MarketReview, new { @class = "custom-control-input", @aria_required = "true" })
+            @Html.LabelFor(m => m.MarketReview)
+        </div>
+        <div class="mb-2 custom-control custom-checkbox">
+            @Html.CheckBoxFor(m => m.MembersEducation, new { @class = "custom-control-input", @aria_required = "true" })
+            @Html.LabelFor(m => m.MembersEducation)
+        </div>
+        <div class="mb-2 custom-control custom-checkbox">
+            @Html.CheckBoxFor(m => m.Resources, new { @class = "custom-control-input", @aria_required = "true" })
+            @Html.LabelFor(m => m.Resources)
+        </div>
+        <hr />
+        <p><strong>Free Content</strong></p>
+        <div class="mb-2 custom-control custom-checkbox">
+            @Html.CheckBoxFor(m => m.FreeGmBitcoin, new { @class = "custom-control-input", @aria_required = "true" })
+            @Html.LabelFor(m => m.FreeGmBitcoin)
+        </div>
+        <div class="mb-2 custom-control custom-checkbox">
+            @Html.CheckBoxFor(m => m.FreeEducation, new { @class = "custom-control-input", @aria_required = "true" })
+            @Html.LabelFor(m => m.FreeEducation)
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+}  

@@ -1,0 +1,24 @@
+﻿@model PaperStreetSoap.Core.Models.Chart
+
+<div class="@(Model.CssClass) @(!Model.Admin ? "wow" : "") zoomIn" data-wow-delay="@(Model.WowDelay)s">
+    <div class="position-relative d-block overflow-hidden">
+        <a class="d-block position-relative top-0 start-0 w-100 @(Model.CssClass == "col-lg-6 col-md-12 col-sm-12" ? "chart-image-container": "" )" href="@(Model.ImageUrl)" target="_blank">
+            <img class="h-100 w-100" src="@Model.ImageUrl" alt="@Model.Title">
+
+            <div class="bg-dark text-center position-absolute bottom-0 end-0 py-2 px-3">
+                <h5 class="m-0 text-white">@Model.Title</h5>
+                <small class="text-primary">@Model.Date.ToShortDateString()</small>
+            </div>
+        </a>
+
+        @if (Model.Admin)
+        {
+            <div class="bg-dark text-center position-absolute bottom-0 start-0 py-2 px-3">
+                @*<button type="button" class="btn btn-primary">Edit</button>*@
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"deleteChart{Model.Id}Modal")">
+                    Delete
+                </button>
+            </div>
+        }
+    </div>
+</div>

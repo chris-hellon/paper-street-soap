@@ -1,0 +1,37 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (string)parentLayout;
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+
+
+}
+
+@{
+    await Html.RenderPartialAsync("~/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel(true, false));
+}
+
+<!-- Manage Account Start -->
+<div class="container-xxl py-5">
+    <div class="container p-0">
+        <div class="row g-4">
+            <div class="col-md-3">
+                @{
+                    await Html.RenderPartialAsync("_ManageNav");
+                }
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Manage Account End -->
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

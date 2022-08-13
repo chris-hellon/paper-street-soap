@@ -1,0 +1,47 @@
+﻿@model PaperStreetSoap.Views.Members.Category.IndexModel
+
+@{
+    Layout = "/Views/Members/Shared/_Layout.cshtml";
+    <div class="container px-0 wow zoomIn" data-wow-delay="0.1s">
+        @{
+            if (Model.Videos != null && Model.Videos.Any())
+            {
+                await Html.RenderPartialAsync("/Views/Shared/_VideosTablePartial.cshtml", Model.Videos);
+            }
+            else if (Model.LiveTradingChart != null)
+            {
+                Model.LiveTradingChart.CssClass = "col-lg-12 col-md-12 col-sm-12";
+                await Html.RenderPartialAsync("/Views/Shared/_ChartPartial.cshtml", Model.LiveTradingChart);
+            }
+            else
+            {
+                <p>No @ViewData["Title"] available</p>
+            }
+        }
+    </div>
+}
+
+
+@section Styles {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesStyles.cshtml");
+    }
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesScripts.cshtml");
+    }
+
+    <script type="text/javascript">$(document).ready(function () {
+            $('#videos-table').DataTable({
+                order: [[2, 'desc']],
+                columnDefs: [
+                    { targets: 'no-sort', orderable: false },
+                    { type: "date", targets: 2 }
+                ],
+                responsive: true
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });</script>
+}

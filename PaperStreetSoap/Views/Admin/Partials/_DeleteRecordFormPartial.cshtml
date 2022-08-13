@@ -1,0 +1,55 @@
+﻿@model PaperStreetSoap.Views.Admin.Partials.DeleteRecordFormModel
+<!-- Modal -->
+
+@if (Model.Id.HasValue)
+{
+    <div class="modal fade" id="@($"delete{Model.Title}{Model.Id}Modal")" tabindex="-1" role="dialog" aria-labelledby="@($"delete{Model.Title}{Model.Id}ModalLabel")" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="@($"delete{Model.Title}{Model.Id}ModalLabel")">Delete @Model.Title</h5>
+                    <button type="button" class="btn-primary btn" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                @using (Html.BeginForm(Model.Handler, "Admin", new { @id = Model.Id}, FormMethod.Post, null, new { @enctype = "multipart/form-data" }))
+                {
+                    <div class="modal-body">
+                        <p>Are you sure you wish to delete this @Model.Title?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Confirm</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+else if (Model.UserId != null)
+{
+    <div class="modal fade" id="@($"delete{Model.Title}{Model.UserId}Modal")" tabindex="-1" role="dialog" aria-labelledby="@($"delete{Model.Title}{Model.UserId}ModalLabel")" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="@($"delete{Model.Title}{Model.UserId}ModalLabel")">Delete @Model.Title</h5>
+                    <button type="button" class="btn-primary btn" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                @using (Html.BeginForm(Model.Handler, "Admin", new { @id = Model.UserId }, FormMethod.Post, null, new { @enctype = "multipart/form-data" }))
+                {
+                    <div class="modal-body">
+                        <p>Are you sure you wish to delete this @Model.Title?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Confirm</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

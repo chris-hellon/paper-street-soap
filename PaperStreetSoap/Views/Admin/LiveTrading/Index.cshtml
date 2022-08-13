@@ -1,0 +1,102 @@
+﻿@model PaperStreetSoap.Views.Admin.Charts.IndexModel
+
+@{
+    ViewData["Title"] = "Admin | Live Trading";
+    Layout = "/Views/Admin/Shared/_Layout.cshtml";
+    ViewData["FormAction"] = "CreateLiveTrading";
+}
+
+<!-- Charts Container -->
+<div class="container px-0">
+    <div class="row g-3 mb-3">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addLiveTradingModal">
+                Add Live Trading
+            </button>
+        </div>
+
+    </div>
+    <div class="row g-3">
+        @if (Model.Charts != null && Model.Charts.Any())
+        {
+            <div class="table-responsive">
+                <!-- Videos Table Start -->
+                <table id="charts-table" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="th-sm">
+                                Title
+                            </th>
+                            <th>
+                                Image Url
+                            </th>
+                            <th class="th-sm">
+                                Date
+                            </th>
+                            <th class="th-sm no-sort">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var chartModel in Model.Charts)
+                            {
+                                <tr>
+                                    <td>@chartModel.Title</td>
+                                    <td><a target="_blank" href="@chartModel.ImageUrl">@chartModel.ImageUrl</a></td>
+                                    <td>@chartModel.Date.ToLongDateString()</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"deleteLiveTrading{chartModel.Id}Modal")">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                await Html.RenderPartialAsync("/Views/Admin/Partials/_DeleteRecordFormPartial.cshtml", new PaperStreetSoap.Views.Admin.Partials.DeleteRecordFormModel("LiveTrading", "DeleteLiveTrading", chartModel.Id));
+                            }
+                        }
+                    </tbody>
+                </table>
+                <!-- Videos Table End -->
+            </div>
+        }
+    </div>
+</div>
+<!-- End Charts Container -->
+<!-- Add Chart Modal -->
+<div class="modal fade" id="addLiveTradingModal" tabindex="-1" role="dialog" aria-labelledby="addLiveTradingModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addChartModalLabel">Add Live Trading</h5>
+                <button type="button" class="btn-primary btn" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            @{
+                await Html.RenderPartialAsync("/Views/Admin/Partials/_AddChartFormPartial.cshtml", Model.Chart);
+            }
+        </div>
+    </div>
+</div>
+<!-- End Add Chart Modal -->
+
+@section Scripts {
+    <script type="text/javascript">
+        ea.addMethod('FileUploaded', function (group) {
+            return $('#UploadedFile').val().length == 0;
+        });
+
+        $('#charts-table').DataTable({
+            order: [[2, 'desc']],
+            columnDefs: [
+                { targets: 'no-sort', orderable: false },
+                { type: "date", targets: 2 }
+            ],
+            responsive: true
+        });
+        $('.dataTables_length').addClass('bs-select');
+
+    </script>
+}

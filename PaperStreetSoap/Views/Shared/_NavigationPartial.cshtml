@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using ProjectBase.Core.Models;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@inject UserManager<ApplicationUser> _userManager
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <img class="me-3" src="https://paperstreetsoap.azureedge.net/site/logo.webp" alt="Navigation bar brand image" />
+    </a>
+
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            @{
+                var httpContext = HttpContextAccessor.HttpContext;
+
+                if (httpContext != null)
+                {
+                    var currentPath = httpContext.Request.Path.Value != null ? httpContext.Request.Path.Value : "/";
+
+                    var currentUser = httpContext.User != null && httpContext.User.Identity != null ? httpContext.User : null;
+                    var userIsSignedIn = currentUser != null && currentUser.Identity != null && currentUser.Identity.IsAuthenticated;
+
+                    <a class="nav-item nav-link @(currentPath == "/" ? "active" : "" )" asp-area="" asp-controller="Home" asp-action="Index">
+                        Home
+                    </a>
+
+                    <a class="nav-item nav-link @(currentPath == "/about" ? "active" : "" )" asp-area="" asp-controller="About" asp-action="Index">
+                        About
+                    </a>
+
+                    if (userIsSignedIn)
+                    {
+                        <div class="nav-item dropdown">
+                            <a class="nav-item nav-link dropdown-toggle @(currentPath.Contains("/members") || currentPath == "/select-package" || currentPath.Contains("/manage-account") ? "active" : "")" data-bs-toggle="dropdown" href="#">
+                                Members
+                            </a>
+                            <div class="dropdown-menu fade-down m-0">
+                                <a class="dropdown-item" asp-area="" asp-controller="Members" asp-action="LatestReview">Latest Review</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Members" asp-action="Category" asp-route-category="market-reviews">Market Reviews</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Members" asp-action="Category" asp-route-category="education">Education</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Members" asp-action="Category" asp-route-category="resources">Resources</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Members" asp-action="Category" asp-route-category="live-trading">Live Trading</a>
+                                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">My Account</a>
+                            </div>
+                        </div>
+
+                        if (currentUser != null && currentUser.IsInRole("Admin"))
+                        {
+                            <div class="nav-item dropdown">
+                                <a class="nav-item nav-link dropdown-toggle @(currentPath.Contains("/admin") ? "active" : "")" data-bs-toggle="dropdown" href="#">
+                                    Admin
+                                </a>
+                                <div class="dropdown-menu fade-down m-0">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Videos">Videos</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Charts">Charts</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Packages">Packages</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="LiveTrading">Live Trading</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Users">Users</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Orders">Orders</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="sub-dropdown">
+                                        Pages &raquo;
+                                    </a>
+                                    <div class="dropdown-submenu">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="HomePage">Home</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="About">About</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="TermsAndConditions">Terms & Conditions</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Disclaimer">Disclaimer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <a class="nav-item nav-link @(currentPath == "/sign-up" || currentPath == "/select-package" ? "active" : "" )" asp-area="Identity" asp-page="/Account/Register">
+                            Sign Up
+                        </a>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-item nav-link dropdown-toggle @(currentPath.Contains("/free-content") ? "active" : "" )" data-bs-toggle="dropdown">
+                                Free Content
+                            </a>
+                            <div class="dropdown-menu fade-down m-0">
+                                <a class="dropdown-item" asp-area="" asp-controller="FreeContent" asp-action="Index" asp-route-category="gm-bitcoin">Gm Bitcoin</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="FreeContent" asp-action="Index" asp-route-category="education">Education</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="FreeContent" asp-action="Index" asp-route-category="charts">Charts</a>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="nav-social-icons">
+                        <a class="btn-social nav-item nav-link" target="_blank" href="https://twitter.com/ApeDurden"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a class="btn-social nav-item nav-link" target="_blank" href="https://www.youtube.com/ApeDurden"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a class="btn-social nav-item nav-link" target="_blank" href="https://tylerdurden.substack.com/?utm_source=substack&utm_medium=web&utm_campaign=reader2?utm_source=%2Fsearch%2Ftyler%2520durden&utm_medium=reader2"><img src="https://paperstreetsoap.azureedge.net/site/substack-dark.webp" alt="Substack logo" /></a>
+                    </div>
+
+                    await Html.RenderPartialAsync("_MobileLoginPartial");
+                    await Html.RenderPartialAsync("_LoginPartial");
+
+                    <div class="mobile-nav-social-icons d-none">
+                        <a class="btn-social nav-item nav-link" target="_blank" href="https://twitter.com/ApeDurden"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a class="btn-social nav-item nav-link" target="_blank" href="https://www.youtube.com/ApeDurden"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a class="btn-social nav-item nav-link" target="_blank" href="https://tylerdurden.substack.com/?utm_source=substack&utm_medium=web&utm_campaign=reader2?utm_source=%2Fsearch%2Ftyler%2520durden&utm_medium=reader2"><img src="https://paperstreetsoap.azureedge.net/site/substack-dark.webp" alt="Substack logo" /></a>
+                    </div>
+
+                    <div class="dark-mode-toggle-container dark-mode">
+                        <input type="checkbox" class="dark-mode-toggle" id="mobile-dark-mode-toggle">
+                        <label for="mobile-dark-mode-toggle" class="dark-mode-toggle-label">
+                            <i class='fas fa-moon'></i>
+                        </label>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="dark-mode-toggle-container">
+            <input type="checkbox" class="dark-mode-toggle" id="dark-mode-toggle">
+            <label for="dark-mode-toggle" class="dark-mode-toggle-label">
+                <i class='fas fa-moon'></i>
+            </label>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->

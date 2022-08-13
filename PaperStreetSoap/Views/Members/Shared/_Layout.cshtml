@@ -1,0 +1,54 @@
+﻿@model PaperStreetSoap.ViewModels.MembersViewModel
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+
+    if (Model.Subscription == null)
+    {
+        await Html.RenderPartialAsync("/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel(false));
+    }
+    else
+    {
+        await Html.RenderPartialAsync("Shared/_TradingViewTickerPartial", Model);
+    }
+}
+
+@section Styles {
+    @RenderSection("Styles", required: false)
+}
+
+
+<!-- Members Start -->
+<div class="container-xxl py-5">
+    <div class="container p-0">
+        <div class="row g-4">
+            @if (Model.Subscription != null)
+            {
+                <div class="col-lg-3 col-md-12">
+                    @{
+                        await Html.RenderPartialAsync("Shared/_NavigationPartial", Model);
+                    }
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    @RenderBody()
+                </div>
+            }
+            else
+            {
+                <div class="col-lg-2 col-md-12">
+                    @{
+                        await Html.RenderPartialAsync("Shared/_NavigationPartial", Model);
+                    }
+                </div>
+                <div class="col-lg-10">
+                    @RenderBody()
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Members End -->
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

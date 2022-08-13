@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    await Html.RenderPartialAsync("~/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel(false));
+}
+
+@section Styles {
+    @RenderSection("Styles", required: false)
+}
+
+<!-- Admin Start -->
+<div class="container-xxl py-5">
+    <div class="container p-0">
+        <div class="row g-4">
+            <div class="col-md-2">
+                @{
+                    await Html.RenderPartialAsync("/Views/Admin/Shared/_NavigationPartial.cshtml");
+                }
+            </div>
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Admin End -->
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

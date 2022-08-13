@@ -1,0 +1,76 @@
+﻿@model PaperStreetSoap.Core.Models.Video
+@using Microsoft.AspNetCore.Identity;
+@using ProjectBase.Core.Models;
+@inject UserManager<ApplicationUser> _userManager
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<!-- Video Container -->
+<div class="container px-0">
+    @if (Model != null)
+    {
+        var httpContext = HttpContextAccessor.HttpContext;
+
+        if (httpContext != null)
+        {
+            var currentPath = httpContext.Request.Path.Value != null ? httpContext.Request.Path.Value : "/";
+
+            var currentUser = httpContext.User != null && httpContext.User.Identity != null ? httpContext.User : null;
+            var userIsSignedIn = currentUser != null && currentUser.Identity != null && currentUser.Identity.IsAuthenticated;
+
+            <div class="row g-4 mb-4">
+                @{
+                    await Html.RenderPartialAsync("/Views/Shared/_VideoPartial.cshtml", Model);
+                }
+            </div>
+            <div class="row g-4 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-9">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#details" aria-expanded="false" aria-controls="details">
+                        Details
+                    </button>
+                    @if (userIsSignedIn)
+                    {
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#discussion" aria-expanded="false" aria-controls="discussion">
+                            Discussion
+                        </button>
+                    }
+                </div>
+            </div>
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-12" id="video-details">
+                    <div class="collapse show" id="details" data-bs-parent="#video-details">
+                        <div class="card card-body">
+                            @Html.Raw(Model.Details)
+                        </div>
+                    </div>
+                    @if (userIsSignedIn)
+                    {
+                        var user = await _userManager.FindByNameAsync(User.Identity?.Name);
+                        var profileImageUrl = user != null && user.ProfileImageUrl != null ? user.ProfileImageUrl : "https://paperstreetsoap.azureedge.net/site/generic-user-profile.webp";
+
+                        <div class="collapse" id="discussion" data-bs-parent="#video-details">
+                            <div class="card card-body">
+                                @{
+                                    await Html.RenderPartialAsync("/Views/Shared/_VideoDiscussionAddCommentPartial.cshtml", new PaperStreetSoap.Views.Shared.VideoDiscussionAddCommentModel(Model.Id, profileImageUrl));
+                                }
+
+                                @*@if (Model.VideoDiscussions.Any())
+                                    {
+                                        <hr />
+                                    }*@
+
+                                @{
+                                    await Html.RenderPartialAsync("/Views/Shared/_VideoDiscussionsPartial.cshtml", Model.VideoDiscussions);
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        }
+    }
+    else
+    {
+        <p>No @ViewData["Title"] available</p>
+    }
+</div>
+<!-- Video Container -->

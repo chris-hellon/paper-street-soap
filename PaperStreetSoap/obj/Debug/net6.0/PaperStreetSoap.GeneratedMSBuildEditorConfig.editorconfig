@@ -1,0 +1,452 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PaperStreetSoap
+build_property.RootNamespace = PaperStreetSoap
+build_property.ProjectDir = /Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9BY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Db25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Db25maXJtRW1haWxDaGFuZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9FeHRlcm5hbExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Lockout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2Nrb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbldpdGgyZmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRGlzYWJsZTJmYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvRXh0ZXJuYWxMb2dpbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvU2V0UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/Subscription.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvU3Vic2NyaXB0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX1N0YXR1c01lc3NhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9NYW5hZ2UvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/SelectPackage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9TZWxlY3RQYWNrYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/SelectPaymentMethod.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9TZWxlY3RQYXltZW50TWV0aG9kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9fU3RhdHVzTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWJvdXQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Charts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ2hhcnRzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/LiveTrading/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTGl2ZVRyYWRpbmcvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vT3JkZXJzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Packages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFja2FnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Pages/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFnZXMvQWJvdXQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Pages/Disclaimer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFnZXMvRGlzY2xhaW1lci9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Pages/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFnZXMvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Pages/Shared/_UpdatePageContentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFnZXMvU2hhcmVkL19VcGRhdGVQYWdlQ29udGVudFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Pages/TermsAndConditions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFnZXMvVGVybXNBbmRDb25kaXRpb25zL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Partials/_AddChartFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFydGlhbHMvX0FkZENoYXJ0Rm9ybVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Partials/_AddPackageFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFydGlhbHMvX0FkZFBhY2thZ2VGb3JtUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Partials/_AddUserFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFydGlhbHMvX0FkZFVzZXJGb3JtUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Partials/_AddVideoFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFydGlhbHMvX0FkZFZpZGVvRm9ybVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Partials/_DeleteRecordFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFydGlhbHMvX0RlbGV0ZVJlY29yZEZvcm1QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Partials/_EditPackageFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFydGlhbHMvX0VkaXRQYWNrYWdlRm9ybVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Partials/_EditVideoFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFydGlhbHMvX0VkaXRWaWRlb0Zvcm1QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Shared/_NavigationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vU2hhcmVkL19OYXZpZ2F0aW9uUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vVXNlcnMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Admin/Videos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vVmlkZW9zL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Disclaimer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzY2xhaW1lci9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/EmailTemplates/NewVideoTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxUZW1wbGF0ZXMvTmV3VmlkZW9UZW1wbGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/EmailTemplates/ResetPasswordTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxUZW1wbGF0ZXMvUmVzZXRQYXNzd29yZFRlbXBsYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Error/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXJyb3IvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/FreeContent/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRnJlZUNvbnRlbnQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/FreeContent/Video/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRnJlZUNvbnRlbnQvVmlkZW8vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/FreeContent/Video/Partials/_VideoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRnJlZUNvbnRlbnQvVmlkZW8vUGFydGlhbHMvX1ZpZGVvUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Home/Partials/_AboutPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXJ0aWFscy9fQWJvdXRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Home/Partials/_ChartsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXJ0aWFscy9fQ2hhcnRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Home/Partials/_ShortIntroductionPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXJ0aWFscy9fU2hvcnRJbnRyb2R1Y3Rpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Home/Partials/_WelcomeVideosPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXJ0aWFscy9fV2VsY29tZVZpZGVvc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Home/Unsubscribe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9VbnN1YnNjcmliZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Members/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVtYmVycy9DYXRlZ29yeS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Members/LatestReview/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVtYmVycy9MYXRlc3RSZXZpZXcvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Members/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVtYmVycy9TaGFyZWQvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Members/Shared/_NavigationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVtYmVycy9TaGFyZWQvX05hdmlnYXRpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Members/Shared/_SingleVideoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVtYmVycy9TaGFyZWQvX1NpbmdsZVZpZGVvUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Members/Shared/_TradingViewNewsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVtYmVycy9TaGFyZWQvX1RyYWRpbmdWaWV3TmV3c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Members/Shared/_TradingViewTickerPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVtYmVycy9TaGFyZWQvX1RyYWRpbmdWaWV3VGlja2VyUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Members/Video/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVtYmVycy9WaWRlby9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Orders/Confirmation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXJzL0NvbmZpcm1hdGlvbi9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Orders/Fail/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXJzL0ZhaWwvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Orders/Processing/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXJzL1Byb2Nlc3NpbmcvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_ChartPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19DaGFydFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_DataTablesScripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19EYXRhVGFibGVzU2NyaXB0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_DataTablesStyles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19EYXRhVGFibGVzU3R5bGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_FooterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Gb290ZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_MobileLoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Nb2JpbGVMb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_NavigationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19OYXZpZ2F0aW9uUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_PackagePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19QYWNrYWdlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_PackagesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19QYWNrYWdlc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_PageHeaderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19QYWdlSGVhZGVyUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_VideoDiscussionAddCommentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WaWRlb0Rpc2N1c3Npb25BZGRDb21tZW50UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_VideoDiscussionNestedPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WaWRlb0Rpc2N1c3Npb25OZXN0ZWRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_VideoDiscussionPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WaWRlb0Rpc2N1c3Npb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_VideoDiscussionsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WaWRlb0Rpc2N1c3Npb25zUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_VideoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WaWRlb1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/Shared/_VideosTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WaWRlb3NUYWJsZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/TermsAndConditions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVybXNBbmRDb25kaXRpb25zL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/chrishellon/Projects/Git Repos/PaperStreetSoap/PaperStreetSoap/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

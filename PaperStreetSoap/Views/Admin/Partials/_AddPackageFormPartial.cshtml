@@ -1,0 +1,46 @@
+﻿@model PaperStreetSoap.Views.Admin.Partials.AddPackageFormModel
+
+@using (Html.BeginForm("CreatePackage", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+<div class="modal-body">
+    <div class="form-floating mb-2">
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @aria_required = "true", @maxlength = "100" })
+        @Html.LabelFor(m => m.Title)
+        @Html.ValidationMessageFor(m => m.Title)
+    </div>
+    <div class="form-floating mb-2">
+        @Html.TextBoxFor(m => m.Price, "{0:G29}", new { @class = "form-control", @aria_required = "true", @type = "number" })
+        @Html.LabelFor(m => m.Price)
+        @Html.ValidationMessageFor(m => m.Price)
+    </div>
+    <div class="form-floating mb-2">
+        @Html.TextBoxFor(m => m.Description, new { @class = "form-control", @aria_required = "true", @maxlength = "500" })
+        @Html.LabelFor(m => m.Description)
+    </div>
+    @*<div class="form-floating mb-2">
+        @Html.TextBoxFor(m => m.OpenNodeKey, new { @class = "form-control", @aria_required = "true", @maxlength = "200" })
+        @Html.LabelFor(m => m.OpenNodeKey)
+        @Html.ValidationMessageFor(m => m.OpenNodeKey)
+    </div>*@
+    <div class="row g-4 m-0">
+        <div class="col form-floating p-0 m-0">
+            @Html.TextBoxFor(m => m.Duration, new { @class = "form-control", @aria_required = "true", @type = "number" })
+            @Html.LabelFor(m => m.Duration)
+        </div>
+        <div class="col form-floating p-0 m-0">
+            @Html.DropDownListFor(m => m.DurationType, new List<SelectListItem>()
+                       {
+                           new SelectListItem("Month", "Month"),
+                           new SelectListItem("Year", "Year")
+                       }, "Select", new { @class = "form-control", @aria_required = "true" })
+
+            @Html.LabelFor(m => m.DurationType)
+        </div>
+    </div>
+
+</div>
+    <div class="modal-footer mt-2">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+}  

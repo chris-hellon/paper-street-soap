@@ -1,0 +1,65 @@
+﻿@model PaperStreetSoap.Core.Models.Video
+
+<div class="video-frame position-relative @(!Model.Admin ? "wow" : "") zoomIn" data-wow-delay="@(Model.WowDelay)s">
+    <div class="position-relative d-block overflow-hidden video-container">
+        @{
+
+            var videoUrl = Model.VideoUrl;
+
+            if ((videoUrl.Contains("youtu.be") || videoUrl.Contains("youtube")) && !videoUrl.Contains("embed") && !videoUrl.Contains("watch"))
+            {
+                int pos = videoUrl.LastIndexOf("/") + 1;
+                string videoKey = videoUrl.Substring(pos, videoUrl.Length - pos);
+
+                videoUrl = $"https://www.youtube.com/embed/{videoKey}";
+            }
+            else if ((videoUrl.Contains("youtu.be") || videoUrl.Contains("youtube")) && videoUrl.Contains("watch"))
+            {
+                string[] videoUrlSplit = videoUrl.Split(new string[] { "v=" }, StringSplitOptions.None);
+
+                string videoKey = "";
+
+                if (videoUrlSplit[1].Contains("&"))
+                {
+                    int pos = videoUrlSplit[1].IndexOf("&", StringComparison.Ordinal);
+                    videoKey = videoUrlSplit[1].Substring(0, pos);
+                }
+                else
+                {
+                    videoKey = videoUrlSplit[1];
+                }
+
+                videoUrl = $"https://www.youtube.com/embed/{videoKey}";
+            }
+            else if (videoUrl.Contains("vimeo") && !videoUrl.Contains("player."))
+            {
+                int pos = videoUrl.LastIndexOf("/") + 1;
+                string videoKey = videoUrl.Substring(pos, videoUrl.Length - pos);
+
+                videoUrl = $"https://player.vimeo.com/video/{videoKey}?h=3ca13aab9d&title=0&byline=0&portrait=0";
+            }
+
+            <iframe src="@videoUrl" title="@Model.Title" class="w-100 h-100 position-absolute top-0 left-0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        }
+
+        @if (Model.Title != null)
+        {
+            <div class="bg-dark text-center position-absolute bottom-0 end-0 py-2 px-3">
+                <h5 class="m-0 text-white">@Model.Title</h5>
+                <small class="text-primary">@Model.Date.ToShortDateString()</small>
+            </div>
+        }
+
+        @if (Model.Admin)
+        {
+            <div class="bg-dark text-center position-absolute bottom-0 start-0 py-2 px-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"deleteVideo{Model.Id}Modal")">
+                    Delete
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"editVideo{Model.Id}Modal")">
+                    Edit
+                </button>
+            </div>
+        }
+    </div>
+</div>

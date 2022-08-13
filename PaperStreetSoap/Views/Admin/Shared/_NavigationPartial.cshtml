@@ -1,0 +1,29 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    <div class="container px-0">
+        <div class="row g-4">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/videos" ? "active" : "" )" asp-controller="Admin" asp-action="Videos">Videos</a></li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/charts" ? "active" : "" )" asp-controller="Admin" asp-action="Charts">Charts</a></li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/packages" ? "active" : "" )" asp-controller="Admin" asp-action="Packages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/live-trading" ? "active" : "" )" asp-controller="Admin" asp-action="LiveTrading">Live Trading</a></li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/users" ? "active" : "" )" asp-controller="Admin" asp-action="Users">Users</a></li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/orders" ? "active" : "" )" asp-controller="Admin" asp-action="Orders">Orders</a></li>
+            </ul>
+           
+            <ul class="nav nav-pills flex-column mt-0">
+                <li>
+                    <hr class="mb-1 p-0" />
+                    <h5 class="mt-0 mb-0 ps-3">Pages</h5>
+                    <hr class="mt-1 p-0" />
+                </li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/pages/home" ? "active" : "" )" asp-controller="Admin" asp-action="HomePage">Home</a></li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/pages/about" ? "active" : "" )" asp-controller="Admin" asp-action="About">About</a></li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/pages/terms-and-conditions" ? "active" : "" )" asp-controller="Admin" asp-action="TermsAndConditions">Terms & Conditions</a></li>
+                <li class="nav-item"><a class="nav-link @(HttpContextAccessor.HttpContext?.Request.Path.Value == "/admin/pages/disclaimer" ? "active" : "" )" asp-controller="Admin" asp-action="Disclaimer">Disclaimer</a></li>
+            </ul>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,86 @@
+﻿@model PaperStreetSoap.Views.Admin.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Admin | Orders";
+    Layout = "/Views/Admin/Shared/_Layout.cshtml";
+}
+
+<!-- Orders Container -->
+<div class="container px-0">
+    <div class="row g-3">
+        @if (Model.Orders != null && Model.Orders.Any())
+        {
+            <div class="table-responsive">
+                <!-- Orders Table Start -->
+                <table id="orders-table" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="th-sm">
+                                Username
+                            </th>
+                            <th class="th-sm th-date">
+                                Order Date
+                            </th>
+                            <th class="th-sm">
+                                Package
+                            </th>
+                            <th class="th-sm">
+                                Price
+                            </th>
+                            <th class="th-sm">
+                                Order Complete
+                            </th>
+                            @*<th class="th-sm no-sort">
+                                </th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var orderModel in Model.Orders)
+                            {
+                                <tr>
+                                    <td>@orderModel.UserName</td>
+                                    <td>@orderModel.CreateDate.ToLongDateString()</td>
+                                    <td>@orderModel.PackageName</td>
+                                    <td>@Math.Round(orderModel.Amount)$</td>
+                                    <td>@(orderModel.OrderConfirmed ? "Yes" : "No")</td>
+                                    @*<td class="text-center">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"deleteOrder{orderModel.Id}Modal")">
+                                                Delete
+                                            </button>
+                                        </td>*@
+                                </tr>
+
+                                await Html.RenderPartialAsync("/Views/Admin/Partials/_DeleteRecordFormPartial.cshtml", new PaperStreetSoap.Views.Admin.Partials.DeleteRecordFormModel("Order", "DeleteOrder", orderModel.Id));
+                            }
+                        }
+                    </tbody>
+                </table>
+                <!-- Orders Table End -->
+            </div>
+        }
+    </div>
+</div>
+<!-- End Orders Container -->
+
+@section Styles {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesStyles.cshtml");
+    }
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesScripts.cshtml");
+    }
+
+    <script type="text/javascript">$('#orders-table').DataTable({
+            order: [[1, 'desc']],
+            columnDefs: [
+                { targets: 'no-sort', orderable: false },
+                { type: "date", targets: 'th-date' }
+            ],
+            responsive: true
+        });
+        $('.dataTables_length').addClass('bs-select');</script>
+}

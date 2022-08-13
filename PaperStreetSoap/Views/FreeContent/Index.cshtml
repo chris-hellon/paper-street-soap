@@ -1,0 +1,87 @@
+﻿@model PaperStreetSoap.Views.FreeContent.IndexModel
+
+@{
+    await Html.RenderPartialAsync("~/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel());
+
+    <div class="container-xxl py-5 wow zoomIn" data-wow-delay="0.1s">
+        <div class="container p-0">
+            @{
+                if (Model.Videos != null && Model.Videos.Any())
+                {
+                    await Html.RenderPartialAsync("/Views/Shared/_VideosTablePartial.cshtml", Model.Videos);
+                }
+                else if (Model.Charts != null && Model.Charts.Any())
+                {
+                    <div class="table-responsive">
+                        <!-- Videos Table Start -->
+                        <table id="charts-table" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="th-sm">
+                                        Title
+                                    </th>
+                                    <th class="th-sm">
+                                        Date
+                                    </th>
+                                    <th class="th-sm no-sort">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    foreach (var chartModel in Model.Charts)
+                                    {
+                                        <tr>
+                                            <td>@chartModel.Title</td>
+                                            <td>@chartModel.Date.ToLongDateString()</td>
+                                            <td class="text-center">
+                                                <a target="_blank" class="btn btn-primary" href="@chartModel.ImageUrl">View</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                        <!-- Videos Table End -->
+                    </div>
+                }
+                else
+                {
+                    <h5 class="text-center">No @ViewData["Title"] available</h5>
+                }
+            }
+        </div>
+    </div>
+}
+
+@section Styles {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesStyles.cshtml");
+    }
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesScripts.cshtml");
+    }
+
+    <script type="text/javascript">$('#charts-table').DataTable({
+            order: [[1, 'desc']],
+            columnDefs: [
+                { targets: 'no-sort', orderable: false },
+                { type: "date", targets: 1 }
+            ],
+            responsive: true
+        });
+        $('.dataTables_length').addClass('bs-select');
+
+        $('#videos-table').DataTable({
+            order: [[2, 'desc']],
+            columnDefs: [
+                { targets: 'no-sort', orderable: false },
+                { type: "date", targets: 2 }
+            ],
+            responsive: true
+        });
+        $('.dataTables_length').addClass('bs-select');</script>
+}

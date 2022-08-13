@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PaperStreetSoap.Core.Models.PageContent>
+
+@if (Model.Any() && Model.First().Content != null && Model.First().Content.Length > 0)
+{
+    <!-- Welcome Videos Start -->
+    <div class="container-xxl py-5">
+        <div class="container p-0">
+            <div class="row g-4">
+                @{
+
+                    double wowDelay = 0.1;
+
+                    foreach (var aboutModel in Model)
+                    {
+                        await Html.RenderPartialAsync("/Views/Shared/_VideoPartial.cshtml", new PaperStreetSoap.Core.Models.Video()
+                        {
+                            VideoUrl = aboutModel.Content,
+                            WowDelay = wowDelay,
+                            Title = null
+                        });
+
+
+                        wowDelay += 0.2;
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Welcome Video End -->
+
+
+}

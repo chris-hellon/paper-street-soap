@@ -1,0 +1,27 @@
+﻿@model PaperStreetSoap.Views.Admin.Partials.AddChartFormModel
+
+@using (Html.BeginForm(ViewData["FormAction"].ToString(), "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="modal-body">
+        <div class="form-floating mb-2">
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @aria_required = "true", @maxlength = "100" })
+            @Html.LabelFor(m => m.Title)
+            @Html.ValidationMessageFor(m => m.Title)
+        </div>
+        <div class="form-floating mb-2">
+            @Html.TextBoxFor(m => m.ImageUrl, new { @class = "form-control", @aria_required = "true" })
+            @Html.LabelFor(m => m.ImageUrl)
+            @Html.ValidationMessageFor(m => m.ImageUrl)
+        </div>
+        <p class="text-center">or</p>
+        <div class="form-floating mb-2">
+            @Html.TextBoxFor(m => m.UploadedFile, new { @class = "form-control", @aria_required = "true", @type = "file" })
+            @Html.LabelFor(m => m.UploadedFile)
+            @Html.ValidationMessageFor(m => m.UploadedFile)
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+}  

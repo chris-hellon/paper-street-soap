@@ -1,0 +1,44 @@
+﻿@model PaperStreetSoap.Views.Shared.PageHeaderPartialModel
+@using Microsoft.AspNetCore.Identity;
+@using ProjectBase.Core.Models;
+@inject UserManager<ApplicationUser> _userManager
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-1">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="text-white mb-0 animated slideInDown">@ViewData["Title"]</h1>
+            </div>
+
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                @if (Model.ShowUserName)
+                {
+                    var user = await _userManager.FindByNameAsync(User.Identity?.Name);
+
+                    if (user != null)
+                    {
+                        <h4 class="py-2 px-lg-5 mt-2 text-white">
+                            @user.UserName
+                        </h4>
+
+                        <div class="w-100 text-center">
+                            <div class="user-profile-image-container page-header-profile-image">
+                                <img class="rounded-circle shadow-1-strong mt-2 h-100 w-100"
+                                     src="@(user.ProfileImageUrl != null && user.ProfileImageUrl.Length > 0 ? user.ProfileImageUrl : "https://paperstreetsoap.azureedge.net/site/generic-user-profile.webp")" alt="User profile image" />
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+
+            @if (Model.ShowBackButton)
+            {
+                <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
+                    <a class="btn btn-secondary py-2 px-lg-3" onclick="history.back();">Back</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Header End -->

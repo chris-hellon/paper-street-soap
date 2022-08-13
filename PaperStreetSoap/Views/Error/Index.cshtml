@@ -1,0 +1,14 @@
+﻿@model PaperStreetSoap.Views.Error.IndexModel
+
+@{
+    await Html.RenderPartialAsync("~/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel(false, true));
+}
+
+<div class="px-5 py-5 wow zoomIn identity-container" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <h2>@Model.ExceptionMessage</h2>
+            <h5>Please try your request again, and if you have any further issues, please contact us.</h5>
+        </div>
+    </div>
+</div>

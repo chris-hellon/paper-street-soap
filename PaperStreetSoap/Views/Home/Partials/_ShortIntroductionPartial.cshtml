@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PaperStreetSoap.Core.Models.PageContent>
+
+@if (Model.Any() && Model.First().Content != null && Model.First().Content.Length > 0)
+{
+    var contentNotAllowed = new string[]
+{
+            "<p style=\"text-align: center; \"><br></p>",
+            "<p><br></p>",
+            "<p style=\"text-align: left; \"><br></p>",
+            "<p style=\"text-align: right; \"><br></p>"
+                                };
+
+    var content = Model.First().Content;
+    if (!contentNotAllowed.Contains(content))
+    {
+        <!-- Short Introduction Start -->
+        <div class="container-xxl py-5 fadeInUp wow" data-wow-delay="0.1s">
+            <div class="container p-0">
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        @Html.Raw(Model.First().Content)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Short Introduction End -->
+    }
+}

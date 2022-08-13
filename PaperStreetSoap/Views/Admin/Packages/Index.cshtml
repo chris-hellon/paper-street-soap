@@ -1,0 +1,121 @@
+﻿@model PaperStreetSoap.Views.Admin.Packages.IndexModel
+
+@{
+    ViewData["Title"] = "Packages | Admin";
+    Layout = "/Views/Admin/Shared/_Layout.cshtml";
+}
+
+<!-- Packages Container -->
+<div class="container px-0">
+    <div class="row g-4 mb-3">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addPackageModal">
+                Add Package
+            </button>
+        </div>
+
+    </div>
+    <div class="row g-4">
+        @if (Model.Packages != null && Model.Packages.Any())
+        {
+            <div class="table-responsive">
+                <!-- Videos Table Start -->
+                <table id="packages-table" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="th-sm">
+                                Title
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Duration
+                            </th>
+                            <th class="th-sm">
+                                Price
+                            </th>
+                            @*<th class="th-sm">
+                                Open Node Key
+                            </th>*@
+                            <th class="th-sm no-sort">
+                            </th>
+                            <th class="th-sm no-sort">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var packageModel in Model.Packages)
+                            {
+                                <tr>
+                                    <td>@packageModel.Title</td>
+                                    <td>@packageModel.Description</td>
+                                    <td>@packageModel.Duration @packageModel.DurationType</td>
+                                    <td>@(packageModel.Price.ToString("G29"))$</td>
+                                    @*<td>@packageModel.OpenNodeKey</td>*@
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"editPackage{packageModel.Id}Modal")">
+                                            Edit
+                                        </button>
+                                    </td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#@($"deletePackage{packageModel.Id}Modal")">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                await Html.RenderPartialAsync("/Views/Admin/Partials/_DeleteRecordFormPartial.cshtml", new PaperStreetSoap.Views.Admin.Partials.DeleteRecordFormModel("Package", "DeletePackage", packageModel.Id));
+                                await Html.RenderPartialAsync("/Views/Admin/Partials/_EditPackageFormPartial.cshtml", new PaperStreetSoap.Views.Admin.Partials.EditPackageFormModel(packageModel.Id, packageModel.Title, packageModel.Price, packageModel.Duration, packageModel.DurationType, packageModel.Description));
+
+                            }
+                        }
+                    </tbody>
+                </table>
+                <!-- Videos Table End -->
+            </div>
+        }
+    </div>
+</div>
+<!-- Packages Container End -->
+<!-- Add Package Modal -->
+<div class="modal fade" id="addPackageModal" tabindex="-1" role="dialog" aria-labelledby="addPackageModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPackageModalLabel">Add Package</h5>
+                <button type="button" class="btn-primary btn" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            @{
+                await Html.RenderPartialAsync("/Views/Admin/Partials/_AddPackageFormPartial.cshtml", Model.Package);
+            }
+        </div>
+    </div>
+</div>
+<!-- Add Package Modal End -->
+
+
+@section Styles {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesStyles.cshtml");
+    }
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("/Views/Shared/_DataTablesScripts.cshtml");
+    }
+
+    <script type="text/javascript">$('#packages-table').DataTable({
+            order: [[3, 'desc']],
+            columnDefs: [
+                { targets: 'no-sort', orderable: false }
+            ],
+            responsive: true
+        });
+        $('.dataTables_length').addClass('bs-select');</script>
+}

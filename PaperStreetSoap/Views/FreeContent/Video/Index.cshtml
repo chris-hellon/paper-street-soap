@@ -1,0 +1,52 @@
+﻿@model PaperStreetSoap.Views.FreeContent.Video.IndexModel
+@using Microsoft.AspNetCore.Identity;
+@using ProjectBase.Core.Models;
+@inject UserManager<ApplicationUser> _userManager
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    await Html.RenderPartialAsync("/Views/Shared/_PageHeaderPartial.cshtml", new PaperStreetSoap.Views.Shared.PageHeaderPartialModel(false, true));
+    await Html.RenderPartialAsync("/Views/FreeContent/Video/Partials/_VideoPartial.cshtml", Model.Video);
+
+    var httpContext = HttpContextAccessor.HttpContext;
+
+    if (httpContext != null)
+    {
+        var currentPath = httpContext.Request.Path.Value != null ? httpContext.Request.Path.Value : "/";
+
+        var currentUser = httpContext.User != null && httpContext.User.Identity != null ? httpContext.User : null;
+        var userIsSignedIn = currentUser != null && currentUser.Identity != null && currentUser.Identity.IsAuthenticated;
+
+        if (userIsSignedIn)
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity?.Name);
+            var profileImageUrl = user != null && user.ProfileImageUrl != null ? user.ProfileImageUrl : "https://paperstreetsoap.azureedge.net/site/generic-user-profile.webp";
+
+            <div class="container-xxl">
+                <div class="container pb-5">
+                    <div class="row g-4 wow fadeInUp">
+                        <div class="col-lg-12">
+                            <h5>Discussion</h5>
+                            <div class="card card-body">
+                                @{
+                                    await Html.RenderPartialAsync("/Views/Shared/_VideoDiscussionAddCommentPartial.cshtml", new PaperStreetSoap.Views.Shared.VideoDiscussionAddCommentModel(Model.Video.Id, profileImageUrl));
+                                }
+
+                                @*@if (Model.Video != null && Model.Video.VideoDiscussions.Any())
+                                {
+                                    <hr />
+                                }*@
+
+                                @{
+                                    await Html.RenderPartialAsync("/Views/Shared/_VideoDiscussionsPartial.cshtml", Model.Video.VideoDiscussions);
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+}
+
