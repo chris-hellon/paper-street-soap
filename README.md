@@ -11,10 +11,10 @@ Upon successful payment, the user would have access to members only content, inc
 Features of the Web App includes:
 
 * A custom Content Management System
-* User login, registration and subscription payment, handled using a Bitcoin Node API client
-* An Azure SQL database containing all User details and Web Page Content
-* Azure CDN and Blob Containers to serve all JS, CSS and Images
-* Notification emails sent out to users whenever new content is uploaded using Google SMTP
+* User login, registration and subscription payment, handled consuming a Bitcoin Node Rest API client
+* An Azure SQL database
+* An Azure CDN with Storage Containers and Blobs to serve all JS, CSS and Images
+* Notification emails sent out to users whenever new content is uploaded using a Google SMTP Client
 
 Tech Stack inludes:
 
