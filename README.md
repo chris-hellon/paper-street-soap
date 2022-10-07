@@ -16,7 +16,7 @@ Features of the Web App includes:
 * An Azure CDN with Storage Containers and Blobs to serve all JS, CSS and Images
 * Notification emails sent out to users whenever new content is uploaded using a Google SMTP Client
 
-Tech Stack inludes:
+Tech Stack includes:
 
 * .NET Core 6
 * C#
