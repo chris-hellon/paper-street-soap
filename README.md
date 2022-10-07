@@ -4,7 +4,7 @@
 
 https://paperstreetsoap.io
 
-A .NET 6 MVC Web App for a client promoting and selling their online trading resources.
+A .NET Core 6 MVC Web App for a client promoting and selling their online trading resources.
 The client requested a platform where the user could register, select a package and purchase the package using Bitcoin or Stripe.
 Upon successful payment, the user would have access to members only content, including embedded videos, live trading data and downloadable resources.
 
@@ -18,7 +18,7 @@ Features of the Web App includes:
 
 Tech Stack inludes:
 
-* .NET 6
+* .NET Core 6
 * C#
 * MVC
 * Azure SQL
